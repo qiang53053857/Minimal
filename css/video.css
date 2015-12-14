@@ -1,0 +1,38 @@
+
+#video{
+	height: 720px;
+	text-align: center;
+}
+
+.cover{
+	height: 384px;
+	background: url(../img/video.jpg) no-repeat center;
+}
+
+.btn-play{
+	position: relative;
+	top: 146px;
+	border-radius: 50px;
+}
+.btn-play:hover{
+	cursor:pointer;
+}
+
+#video h1{
+	margin: 78px 0 21px 0;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+#video p{
+	margin: 0 auto;
+	width: 555px;
+	margin-bottom: 80px;
+}
+
+.video-source{
+	margin:0 auto;
+	width: 686px;
+	height:384px;
+	display: none;
+}

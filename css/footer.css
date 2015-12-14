@@ -1,0 +1,26 @@
+#footer{
+	height: 350px;
+	background: #3b3b3b;
+}
+
+.footer-mainmenu{
+	color: #fff;
+}
+
+.footer-mainmenu{
+	float: left;
+	width: 300px;
+}
+
+.footer-mainmenu h4{
+	font-size: 18px;
+	margin-top:80px;
+	margin-bottom: 34px; 
+}
+
+.footer-submenu a{
+	font-size: 14px;
+	color: #fff;
+	font-size: 14px;
+}
+
