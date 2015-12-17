@@ -7,6 +7,7 @@ Object.prototype.InitCarousel = function(){
 	if (list.length==2) {
 		pointer=list[0];
 		banners=list[1];
+
 	}else {
 		console.log("init faild please check with document")
 	};
@@ -22,7 +23,7 @@ Object.prototype.InitCarousel = function(){
 
 				removeClassNameForList(name,"active");
 
-				target.className=" "+"active";
+				addOneClass(target,"active")
 			};
     	});
 };

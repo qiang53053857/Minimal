@@ -118,20 +118,20 @@
 	<div id="carousel">
 
 		<ul class="carousel-point">
-			<li class="active abc"></li>
-			<li class="abc"></li>
-			<li class="abc"></li>
-			<li class="abc"></li>
-			<li class="abc"></li>
-			<li class="abc"></li>
+			<li class="active active abc active"></li>
+			<li id="abcd" class="abc     123     ab   "></li>
+			<li class="abc 123 ab"></li>
+			<li class="abc 123 ab"></li>
+			<li class="abc 123 a"></li>
+			<li class="abc 123 a"></li>
 			<li></li>
 			<li></li>
 		</ul>
 
 		<ul class="carousel-content">
-			<li class="active"><a href=""><img src="img/Shape01.png" alt=""></a></li>
-			<li><a href=""><img src="img/Shape02.png" alt=""></a></li>
-			<li><a href=""><img src="img/Shape03.png" alt=""></a></li>
+			<li class="active"><a ><img src="img/Shape01.png" alt=""></a></li>
+			<li><a ><img src="img/Shape02.png" alt=""></a></li>
+			<li><a ><img src="img/Shape03.png" alt=""></a></li>
 		</ul>
 	</div>
 
@@ -176,6 +176,7 @@
 			</ul>
 		</div>
 	</div>
+	<button id="click">click</button>
 	<script src="js/martin.js"></script>
 	<script src="js/video.js"></script>
 	<script src="js/work.js"></script>
@@ -183,8 +184,16 @@
     <script>
     	var obj = document.getElementById("carousel");
     	obj.InitCarousel();
-  //   	addClassNameForList(obj.getElementsByTagName("li"),"abc");
-		// // removeClassNameForList(obj.getElementsByTagName("li"),"active")
+    	// var str = document.getElementById("abcd").className;
+    	// str = str.replace(/\s+/g, ' ');
+    	// arr=str.split(" ");
+    	//  		   for(var i=0;i<arr.length;i++){
+ 		  //  	    if (arr[i]!="") {
+ 		  //  	    	alert(arr[i]);
+ 		  //  	    };
+ 		  //  };
+    	// console.log(str);
+    	// console.log(str.split(" "));
     </script>
 </body>
 </html>
