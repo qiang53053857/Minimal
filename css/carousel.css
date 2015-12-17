@@ -1,0 +1,28 @@
+
+
+.carousel-point li{
+	text-align: center;
+	float: left;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	background: black;
+	border:1px solid black;
+	border-radius: 50px;
+	color: green;
+	margin: 0px 10px;
+	cursor:  pointer;
+}
+
+.carousel-point .active,.carousel-point li:hover{
+	background: #fff;
+}
+
+.carousel-content li{
+	display: none;
+}
+
+.carousel-content .active{
+	display: block;
+}

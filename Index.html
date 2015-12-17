@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Minima</title>
-
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/banner.css">
 	<link rel="stylesheet" href="css/describe.css">
 	<link rel="stylesheet" href="css/video.css">
 	<link rel="stylesheet" href="css/work.css">
-	<link rel="stylesheet" type="text/css" href="css/footer.css">
+		<link rel="stylesheet" href="css/carousel.css">
+	<link rel="stylesheet" href="css/footer.css">
 	</head>
 <body>
 	<div id="header">
@@ -115,6 +115,26 @@
 				<a href="">Click here to subscribe</a>
 			</div>
 	</div>
+	<div id="carousel">
+
+		<ul class="carousel-point">
+			<li class="active abc"></li>
+			<li class="abc"></li>
+			<li class="abc"></li>
+			<li class="abc"></li>
+			<li class="abc"></li>
+			<li class="abc"></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<ul class="carousel-content">
+			<li class="active"><a href=""><img src="img/Shape01.png" alt=""></a></li>
+			<li><a href=""><img src="img/Shape02.png" alt=""></a></li>
+			<li><a href=""><img src="img/Shape03.png" alt=""></a></li>
+		</ul>
+	</div>
+
 	<div id="footer">
 		<div class="web-width">
 			<ul>
@@ -156,7 +176,15 @@
 			</ul>
 		</div>
 	</div>
+	<script src="js/martin.js"></script>
 	<script src="js/video.js"></script>
 	<script src="js/work.js"></script>
+	<script src="js/carousel.js"></script>
+    <script>
+    	var obj = document.getElementById("carousel");
+    	obj.InitCarousel();
+  //   	addClassNameForList(obj.getElementsByTagName("li"),"abc");
+		// // removeClassNameForList(obj.getElementsByTagName("li"),"active")
+    </script>
 </body>
 </html>
