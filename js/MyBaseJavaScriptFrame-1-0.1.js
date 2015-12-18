@@ -3,22 +3,37 @@ Object.prototype.TestByLog=function (){
 	console.log(this);
 };
 
-
+//
+Object.prototype.GetByClass=function (sClass){
+        var Ele=this.getElementsByTagName('*');
+        var Result=[];
+        var re=new RegExp('\\b'+sClass+'\\b','i');
+        
+        for(var i=0;i<Ele.length;i++)
+        {
+                if(re.test(Ele[i].className))
+                {
+                        Result.push(Ele[i]);
+                };
+        };
+        
+        return Result;
+};
 
 //add one class name
-function addOneClass(element,classname){
+function addOneClass(element,newClassName){
 
 	if (typeof(element)=="object"||element.className!="undefined") {
 		
 		var currentClass=element.className;
 
-		element.className+=(currentClass=="")?classname:" "+classname;
+		element.className+=(currentClass=="")?newClassName:" "+newClassName;
 	};
 
 };
 
 //remove one class name
-function removeOneClass(element,classname){
+function removeOneClass(element,newClassName){
 
 	if (typeof(element)=="object"||element.className!="undefined") {
 
@@ -28,66 +43,69 @@ function removeOneClass(element,classname){
  		   arr=currentClass.replace(/\s+/g, ' ').split(' ');
 
  		   for(var i=0;i<arr.length;i++){
- 		   	    if (arr[i]!==classname&&arr[i]!=="") {
+ 		   	    if (arr[i]!==newClassName&&arr[i]!=="") {
  		   	    	addOneClass(element,arr[i]);
  		   	    };
  		   };
  		}else{
- 			element.className=(currentClass===classname)?"":currentClass;
+ 			element.className=(currentClass===newClassName)?"":currentClass;
  		};
 	};
 };
 
+//add an attribute
+function addAttrbuteForList(list,attrName,attrValue){
+	if (typeof(list)=="object") {
+		for(var i = 0; i<list.length;i++){
+			if(list[i].setAttribute){
+				list[i].setAttribute(attrName,attrValue);
+			}
+		};
+	};
+};
    
 //add class name for a list
-function addClassNameForList(list,classname){
+function addClassNameForList(list,newClassName){
 	if (typeof(list)=="object"){
 		
 		if (typeof(list.className)!="undefined"&&typeof(list.className)=="string") {
-			addOneClass(list,classname);
+			addOneClass(list,newClassName);
 		}else{
 				
 			for(var i= 0; i<list.length;i++){
 
-				addOneClass(list[i],classname);
+				addOneClass(list[i],newClassName);
 
 			};
 		};
 	};
 };
 
-
-
-
 //remove class name for a list
-function removeClassNameForList(list,classname){
+function removeClassNameForList(list,newClassName){
 	if (typeof(list)=="object"){
 				
 		if (typeof(list.className)!="undefined"&&typeof(list.className)=="string") {
-			removeOneClass(list,classname);
+			removeOneClass(list,newClassName);
 		}else{
 				
 			for(var i= 0; i<list.length;i++){
 
-				removeOneClass(list[i],classname);
+				removeOneClass(list[i],newClassName);
 
 			};
 		};
 	};
 };
 
-
-
-
-
-
 // get the same tags from a root.
-function getTagCountFromList(list,tagName){
+function getArrByTag(list,tagName){
 	if (typeof(list)=="object") {
 		return list.getElementsByTagName(tagName);
 	};
 	return false;
 };
+
 
 //for compatibility
 function addEvent(eventName,element,logic){
@@ -98,4 +116,7 @@ function addEvent(eventName,element,logic){
 	};
 };
 
-
+//implement trigger
+function trigger(element,eventName){
+	element[eventName].call(element);
+};

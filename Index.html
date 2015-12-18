@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/describe.css">
 	<link rel="stylesheet" href="css/video.css">
 	<link rel="stylesheet" href="css/work.css">
-		<link rel="stylesheet" href="css/carousel.css">
+	<link rel="stylesheet" href="css/carousel.css">
 	<link rel="stylesheet" href="css/footer.css">
 	</head>
 <body>
@@ -118,12 +118,7 @@
 	<div id="carousel">
 
 		<ul class="carousel-point">
-			<li class="active active abc active"></li>
-			<li id="abcd" class="abc     123     ab   "></li>
-			<li class="abc 123 ab"></li>
-			<li class="abc 123 ab"></li>
-			<li class="abc 123 a"></li>
-			<li class="abc 123 a"></li>
+			<li class="active"></li>
 			<li></li>
 			<li></li>
 		</ul>
@@ -133,6 +128,9 @@
 			<li><a ><img src="img/Shape02.png" alt=""></a></li>
 			<li><a ><img src="img/Shape03.png" alt=""></a></li>
 		</ul>
+
+		<a class="previous">previous</a>
+		<a class="next">next</a>
 	</div>
 
 	<div id="footer">
@@ -177,23 +175,14 @@
 		</div>
 	</div>
 	<button id="click">click</button>
-	<script src="js/martin.js"></script>
+	<script src="js/MyBaseJavaScriptFrame-1-0.1.js"></script>
 	<script src="js/video.js"></script>
 	<script src="js/work.js"></script>
 	<script src="js/carousel.js"></script>
     <script>
     	var obj = document.getElementById("carousel");
     	obj.InitCarousel();
-    	// var str = document.getElementById("abcd").className;
-    	// str = str.replace(/\s+/g, ' ');
-    	// arr=str.split(" ");
-    	//  		   for(var i=0;i<arr.length;i++){
- 		  //  	    if (arr[i]!="") {
- 		  //  	    	alert(arr[i]);
- 		  //  	    };
- 		  //  };
-    	// console.log(str);
-    	// console.log(str.split(" "));
+    	
     </script>
 </body>
 </html>
