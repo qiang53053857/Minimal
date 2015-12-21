@@ -1,11 +1,14 @@
 
-Object.prototype.InitCarousel = function(){
+Object.prototype.InitCarousel = function(interval){
 
 	var pointer;
 	var banner;
 	var pointerArr;
 	var bannerArr;
 	var arr = getArrByTag(this,"ul");
+	var previous=this.GetByClass("previous")[0];
+	var next=this.GetByClass("next")[0];
+
 
 	if (arr.length==2) {
 		pointer=arr[0];
@@ -34,26 +37,57 @@ Object.prototype.InitCarousel = function(){
 				removeClassNameForList(bannerArr,"active");
 				addOneClass(target,"active");
 				addOneClass(bannerArr[num],"active");
+				if (interval!=false) {
+					clearInterval(autoPlayTimer);
+   					autoPlayTimer = self.setInterval(autoPlayHandler,interval);
+   				};
 			};
     	});
 
-   var currentPointer = pointer.GetByClass("active")[0].getAttribute("target-num");
 
-   swithing(pointerArr,currentPointer);
+	function autoPlayHandler(){
+   		var currentPointer = pointer.GetByClass("active")[0].getAttribute("target-num");
+   		Next(pointerArr,currentPointer);
+   	};
+
+	if (interval!=false) {
+   		var autoPlayTimer = self.setInterval(autoPlayHandler,interval);
+	}
+
+   previous.addEventListener("click",function(){
+   		var currentPointer = pointer.GetByClass("active")[0].getAttribute("target-num");
+   		Previous(pointerArr,currentPointer);
+   });
+
+   addEvent("click",next,function(){
+   		var currentPointer = pointer.GetByClass("active")[0].getAttribute("target-num");
+   		Next(pointerArr,currentPointer);
+   });
 };
 
-function swithing(list,current){
+function Next(list,current){
 	
 			var length=list.length;
 			if (current==length-1||length==1) {
 
-				trigger(list[current],"click");
+				trigger(list[0],"click");
 	
 			}else{
 
 				trigger(list[Number(current)+1],"click");
 			};
 	
+};
+
+function Previous(list,current){
+
+			var length = list.length;
+
+			if (length==1||current==0) {
+				trigger(list[Number(length)-1],"click");
+			}else {
+				trigger(list[Number(current)-1],"click")
+			};
 };
 
 
