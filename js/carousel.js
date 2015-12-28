@@ -43,6 +43,18 @@ Object.prototype.InitCarousel = function(interval){
    				};
 			};
     	});
+    
+    addEvent("mouseover",this,function(){
+
+    	clearInterval(autoPlayTimer);
+
+    });
+
+    addEvent("mouseout",this,function(){
+
+    	autoPlayTimer = self.setInterval(autoPlayHandler,interval);
+
+    });
 
 
 	function autoPlayHandler(){
